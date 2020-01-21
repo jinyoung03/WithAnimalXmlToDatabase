@@ -1,0 +1,41 @@
+오라클과 JSOUP을 이용한 외부 URL(XML)을 읽어 데이터베이스에 저장하는 프로그램입니다.
+
+1. 리소스에 있는 외부라이브러리 2개(jsoup-1.12.1.jar, ojdbc6.jar)를 추가해야합니다.
+2. XmlToDataBase에서 bgnde(시작일) 와 endde(종료일) 의 날짜를 설정합니다.
+3. 아래 데이터베이스 쿼리를 이용해 테이블과 시퀀스를 미리 만듭니다.
+4. XmlToDataBase를 실행 시킵니다.
+
+
+DROP TABLE withanimal_protect;	-- 테이블 삭제			
+CREATE TABLE withanimal_protect		-- 테이블 추가
+(	
+	content_idx		NUMBER			PRIMARY KEY NOT NULL,	
+	age				VARCHAR2(120)	NULL,	
+	careAddr		VARCHAR2(600)	NULL,	
+	careNm			VARCHAR2(200)	NULL,	
+	careTel			VARCHAR2(56)	NULL,	
+	chargeNm		VARCHAR2(80)	NULL,	
+	colorCd			VARCHAR2(120)	NULL,	
+	desertionNo		VARCHAR2(80)	NULL,	
+	filename		VARCHAR2(400)	NULL,	
+	happenDt		VARCHAR2(32)	NULL,	
+	happenPlace		VARCHAR2(400)	NULL,	
+	kindCd			VARCHAR2(200)	NULL,	
+	neuterYn		VARCHAR2(4)		NULL,	
+	noticeEdt		VARCHAR2(32)	NULL,	
+	noticeNo		VARCHAR2(120)	NULL,	
+	noticeSdt		VARCHAR2(32)	NULL,	
+	officetel		VARCHAR2(56)	NULL,	
+	orgNm			VARCHAR2(200)	NULL,	
+	popfile			VARCHAR2(400)	NULL,	
+	processState	VARCHAR2(40)	NULL,	
+	sexCd			VARCHAR2(4)		NULL,	
+	specialMark		VARCHAR2(600)	NULL,	
+	weight			VARCHAR2(120)	NULL
+	--,
+	--bgnde			VARCHAR2(20)	NULL,	
+	--endde			VARCHAR2(20)	NULL	
+);	
+
+DROP SEQUENCE withanimal_protect_idx_seq; -- 시퀀스 삭제
+CREATE SEQUENCE withanimal_protect_idx_seq; -- 시퀀스 추가
